@@ -1,0 +1,27 @@
+sagemaker-user@default:~/GIT/Day_2$ git log
+commit 33641a5c5270614215567e11374eb335489e59e2 (HEAD -> master)
+Author: Gurnam <lohiagurunam11@gmail.com>
+Date:   Thu Sep 12 16:43:44 2024 +0000
+
+    Added all files
+
+commit 123b937c939a1471a73a7333bc6742194e309aa1
+Author: Gurnam <lohiagurunam11@gmail.com>
+Date:   Thu Sep 12 16:42:20 2024 +0000
+
+    Added two files
+
+commit b196accf12474846f8da0cdc28922215ac5604bc
+Author: Gurnam <lohiagurunam11@gmail.com>
+Date:   Thu Sep 12 16:40:14 2024 +0000
+
+    added first file
+sagemaker-user@default:~/GIT/Day_2$ 
+
+
+
+
+
+if its a longer log hit enter to view more
+
+at the end type q to exit out of log

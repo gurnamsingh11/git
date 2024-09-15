@@ -1,0 +1,6 @@
+System that can allow us to work on the same file, yet retain information about previous versions.
+
+A version control system VCS allows us to track changes, undo changes, compare versions, work with others, and more!
+
+
+

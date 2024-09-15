@@ -1,0 +1,89 @@
+sagemaker-user@default:~/GIT/Day_5$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint:   git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/sagemaker-user/GIT/Day_5/.git/
+sagemaker-user@default:~/GIT/Day_5$ git add master.txt 
+sagemaker-user@default:~/GIT/Day_5$ git commit -m "first commit on master"
+[master (root-commit) 781d005] first commit on master
+ 1 file changed, 1 insertion(+)
+ create mode 100644 master.txt
+sagemaker-user@default:~/GIT/Day_5$ git branch other
+sagemaker-user@default:~/GIT/Day_5$ git branch
+* master
+  other
+sagemaker-user@default:~/GIT/Day_5$ git switch other
+Switched to branch 'other'
+sagemaker-user@default:~/GIT/Day_5$ git status
+On branch other
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .ipynb_checkpoints/
+        01_Git-Stash.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+sagemaker-user@default:~/GIT/Day_5$ git status
+On branch other
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .ipynb_checkpoints/
+        01_Git-Stash.txt
+        other.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+sagemaker-user@default:~/GIT/Day_5$ git switch master
+Switched to branch 'master'
+sagemaker-user@default:~/GIT/Day_5$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .ipynb_checkpoints/
+        01_Git-Stash.txt
+        other.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+sagemaker-user@default:~/GIT/Day_5$ git switch other
+Switched to branch 'other'
+sagemaker-user@default:~/GIT/Day_5$ git add other.txt 
+sagemaker-user@default:~/GIT/Day_5$ git commit -m "other commit"
+[other b57b111] other commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 other.txt
+sagemaker-user@default:~/GIT/Day_5$ git switch master
+M       master.txt
+Switched to branch 'master'
+sagemaker-user@default:~/GIT/Day_5$ git switch other
+M       master.txt
+Switched to branch 'other'
+sagemaker-user@default:~/GIT/Day_5$ git stash
+Saved working directory and index state WIP on other: b57b111 other commit
+sagemaker-user@default:~/GIT/Day_5$ git switch master
+Switched to branch 'master'
+sagemaker-user@default:~/GIT/Day_5$ git add master.txt 
+sagemaker-user@default:~/GIT/Day_5$ git commit -m "updated master.txt"
+[master 717d876] updated master.txt
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+sagemaker-user@default:~/GIT/Day_5$ git switch other
+Switched to branch 'other'
+sagemaker-user@default:~/GIT/Day_5$ git stash pop
+On branch other
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   master.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .ipynb_checkpoints/
+        01_Git-Stash.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (de8d34a1417ef94f09d88eb953b7e1e66376ea41)
+sagemaker-user@default:~/GIT/Day_5$ 

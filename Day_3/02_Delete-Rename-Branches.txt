@@ -1,0 +1,53 @@
+Renaming a Branch
+git switch branch_to_rename
+git branch -m new_name
+
+Deleting a Branch
+git branch -d branch_to_delete_name
+
+##
+
+sagemaker-user@default:~/GIT/Day_3$ git status
+On branch new_branch
+
+
+sagemaker-user@default:~/GIT/Day_3$ git switch master
+Switched to branch 'master'
+
+sagemaker-user@default:~/GIT/Day_3$ git switch experimenal
+Switched to branch 'experimenal'
+
+sagemaker-user@default:~/GIT/Day_3$ git branch -m please_delete
+
+sagemaker-user@default:~/GIT/Day_3$ git status
+
+On branch please_delete
+
+sagemaker-user@default:~/GIT/Day_3$ git log
+
+commit 1dd002e309c44491747b084959eb98839c3643fb (HEAD -> please_delete)
+
+
+    Experimental updates
+
+commit f792bf8e034dd3768e7450e0c651e49ac060175f (new_branch)
+
+    new updates for new branch
+
+
+    My First commiy
+
+sagemaker-user@default:~/GIT/Day_3$ git switch master
+Switched to branch 'master'
+
+sagemaker-user@default:~/GIT/Day_3$ git branch -d please_delete
+error: The branch 'please_delete' is not fully merged.
+
+If you are sure you want to delete it, run 'git branch -D please_delete'.
+
+sagemaker-user@default:~/GIT/Day_3$ git branch -D please_delete
+Deleted branch please_delete (was 1dd002e).
+
+sagemaker-user@default:~/GIT/Day_3$ git branch
+* master
+  new_branch

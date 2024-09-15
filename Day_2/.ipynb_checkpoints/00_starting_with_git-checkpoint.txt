@@ -1,0 +1,13 @@
+Commands:
+
+Changind Code in Repo:
+git add
+
+Committing these changes:
+git commit
+
+Pushing or Pulling Changes:
+git push and git pull
+
+Checking Status, Logs, and Changes
+git status, git log, git diff

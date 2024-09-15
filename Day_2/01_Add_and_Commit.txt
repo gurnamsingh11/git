@@ -1,0 +1,118 @@
+sagemaker-user@default:~/GIT/Day_2$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../Day_0/
+        ../Day_1/
+        ./
+        ../git-course/
+        ../private-repo/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+sagemaker-user@default:~/GIT/Day_2$ git init
+
+Initialized empty Git repository in /home/sagemaker-user/GIT/Day_2/.git/
+
+
+sagemaker-user@default:~/GIT/Day_2$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .ipynb_checkpoints/
+        Add_and_Commit.txt
+        file_one.txt
+        starting_with_git.txt
+        untitled.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+sagemaker-user@default:~/GIT/Day_2$ git add file_one.txt 
+
+
+sagemaker-user@default:~/GIT/Day_2$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file_one.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .ipynb_checkpoints/
+        Add_and_Commit.txt
+        starting_with_git.txt
+        untitled.txt
+
+
+sagemaker-user@default:~/GIT/Day_2$ git commit -m "added first file"
+
+
+[master (root-commit) b196acc] added first file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file_one.txt
+
+
+sagemaker-user@default:~/GIT/Day_2$ git add file_three.txt file_two.txt 
+
+
+sagemaker-user@default:~/GIT/Day_2$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file_three.txt
+        new file:   file_two.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .ipynb_checkpoints/
+        Add_and_Commit.txt
+        starting_with_git.txt
+        untitled.txt
+
+
+sagemaker-user@default:~/GIT/Day_2$ git commit -m "Added two files"
+[master 123b937] Added two files
+ 2 files changed, 2 insertions(+)
+ create mode 100644 file_three.txt
+ create mode 100644 file_two.txt
+
+
+sagemaker-user@default:~/GIT/Day_2$ git add .
+
+
+sagemaker-user@default:~/GIT/Day_2$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .ipynb_checkpoints/Add_and_Commit-checkpoint.txt
+        new file:   .ipynb_checkpoints/file_one-checkpoint.txt
+        new file:   .ipynb_checkpoints/file_three-checkpoint.txt
+        new file:   .ipynb_checkpoints/file_two-checkpoint.txt
+        new file:   .ipynb_checkpoints/starting_with_git-checkpoint.txt
+        new file:   Add_and_Commit.txt
+        new file:   starting_with_git.txt
+        new file:   untitled.txt
+
+
+sagemaker-user@default:~/GIT/Day_2$ git commit -m "Added all files"
+[master 33641a5] Added all files
+ 8 files changed, 42 insertions(+)
+ create mode 100644 .ipynb_checkpoints/Add_and_Commit-checkpoint.txt
+ create mode 100644 .ipynb_checkpoints/file_one-checkpoint.txt
+ create mode 100644 .ipynb_checkpoints/file_three-checkpoint.txt
+ create mode 100644 .ipynb_checkpoints/file_two-checkpoint.txt
+ create mode 100644 .ipynb_checkpoints/starting_with_git-checkpoint.txt
+ create mode 100644 Add_and_Commit.txt
+ create mode 100644 starting_with_git.txt
+ create mode 100644 untitled.txt

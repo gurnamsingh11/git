@@ -1,0 +1,38 @@
+Windows
+Download git:
+https://git-scm.com/
+
+Powershell
+winget install --id Git.Git -e --source winget
+
+MacOs
+brew install git
+
+Ubuntu
+apt-get install git
+
+
+
+Use git from command prompt
+
+Configure Git:
+
+check current configuration with commands:
+
+git config user.name
+git config user.email
+
+Configuration commands will be:
+
+git config --global user.name "user"
+git config --global user.email "email"
+
+git bash:
+
+git config --global user.name <"username">
+
+git config --global user.email <"email">
+
+
+
+

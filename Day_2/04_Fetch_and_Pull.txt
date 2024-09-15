@@ -1,0 +1,59 @@
+We created a new file on github repo
+
+sagemaker-user@default:~/GIT/Day_2$ git fetch
+
+
+sagemaker-user@default:~/GIT/Day_2$ git checkout origin/master
+M       .ipynb_checkpoints/Add_and_Commit-checkpoint.txt
+D       .ipynb_checkpoints/file_one-checkpoint.txt
+D       .ipynb_checkpoints/file_three-checkpoint.txt
+D       .ipynb_checkpoints/file_two-checkpoint.txt
+M       Add_and_Commit.txt
+D       file_one.txt
+D       file_three.txt
+D       file_two.txt
+D       untitled.txt
+Note: switching to 'origin/master'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at ed7987f Create brand_new_file.txt
+
+Using above command it will show new files created from github to local but temporarily
+
+
+sagemaker-user@default:~/GIT/Day_2$ git switch master
+M       .ipynb_checkpoints/Add_and_Commit-checkpoint.txt
+D       .ipynb_checkpoints/file_one-checkpoint.txt
+D       .ipynb_checkpoints/file_three-checkpoint.txt
+D       .ipynb_checkpoints/file_two-checkpoint.txt
+M       Add_and_Commit.txt
+D       file_one.txt
+D       file_three.txt
+D       file_two.txt
+D       untitled.txt
+Previous HEAD position was ed7987f Create brand_new_file.txt
+Switched to branch 'master'
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+sagemaker-user@default:~/GIT/Day_2$ git pull
+Updating 33641a5..ed7987f
+Fast-forward
+ brand_new_file.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 brand_new_file.txt
+
+using above command will get all files to local

@@ -1,0 +1,34 @@
+git revert will create a new commit that undoes work from previous commit but keeps those commits in branch.
+
+sagemaker-user@default:~/GIT/Day_4$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint:   git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/sagemaker-user/GIT/Day_4/.git/
+sagemaker-user@default:~/GIT/Day_4$ git add myfile.txt 
+sagemaker-user@default:~/GIT/Day_4$ git commit -m "good code"
+
+[master (root-commit) c86f7d1] one more line of good code
+ 1 file changed, 2 insertions(+)
+ create mode 100644 myfile.txt
+sagemaker-user@default:~/GIT/Day_4$ git add myfile.txt 
+sagemaker-user@default:~/GIT/Day_4$ git commit -m "buggy commit"
+[master c34adb4] buggy commit
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+sagemaker-user@default:~/GIT/Day_4$ git log --oneline
+c34adb4 (HEAD -> master) buggy commit
+c86f7d1 one more line of good code
+sagemaker-user@default:~/GIT/Day_4$ git revert c34adb4
+[master e704400] Revert "buggy commit"
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+sagemaker-user@default:~/GIT/Day_4$ git log --oneline
+e704400 (HEAD -> master) Revert "buggy commit"
+c34adb4 buggy commit
+c86f7d1 one more line of good code

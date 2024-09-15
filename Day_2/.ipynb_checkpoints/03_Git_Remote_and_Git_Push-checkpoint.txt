@@ -1,0 +1,39 @@
+we can check for remote branches with the command:
+git remote -v
+
+If you run thhis command on a cloned repo you will view the URL of the remote branch, like the Github URL.
+
+If there is no connection to a remote branch, then you wont see a URL.
+
+After creating a repo locally we need to create the repo on Github.
+
+Once created the repo on Github you will see the instructions under: ".. or push an existing repo from command line"
+
+we tell git we want to add a remote branch using git remote :
+git remote add name https://url.git
+
+By convention we call this remote branch the origin branch
+
+git remote add origin https://url.git
+
+You then replace the .git URL with the .git URL from the repo you created.
+
+Few commands:
+git remote rename <old> <new>
+git remote remove <name>
+
+Push:
+
+we tell git to push to the remote main/master branch called origin with the command:
+git push -u origin main/master
+
+##
+
+sagemaker-user@default:~/GIT/Day_2$ git remote -v
+sagemaker-user@default:~/GIT/Day_2$ git remote add origin https://token@github.com/gurnamsingh11/Learn_git.git
+sagemaker-user@default:~/GIT/Day_2$ git push -u origin master
+done.
+To https://github.com/gurnamsingh11/Learn_git.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+

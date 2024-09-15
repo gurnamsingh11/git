@@ -1,0 +1,18 @@
+Cloning Private Repos:
+
+Option 1: Comand Line:
+Create Personal Access Tokens (PAT) on Github.com
+When using the git clone command reference the PAT
+
+Option 2: Github Desktop Tool GUI:
+Open the Github Desktop Tool
+Login with Github Username and PW
+Clone Repo via GUI
+
+Clone Syntax with PAT:
+
+git clone https://token@github.com/account/repo.git
+
+
+Via Github Desktop:
+

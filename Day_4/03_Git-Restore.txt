@@ -1,0 +1,88 @@
+restore a file to its previous commit
+
+git restore command:
+git restore file_name
+
+cannot undo git restore command
+
+we state the number of commits prior from the HEAD to go back to: (~N: no of commits you want to go back)
+git restore --source HEAD ~N file.txt
+
+also allows us to unstage files that we had already added to the staging area using git add
+git restore --staged filename
+
+
+sagemaker-user@default:~/GIT/Day_4$ gi log --oneline
+bash: gi: command not found
+sagemaker-user@default:~/GIT/Day_4$ git log --oneline
+47b9dc8 (HEAD -> master) third commit
+e70fad3 second commit
+dc1b826 first commit
+sagemaker-user@default:~/GIT/Day_4$ git restore myfile.txt 
+sagemaker-user@default:~/GIT/Day_4$ git log -oneline
+fatal: unrecognized argument: -oneline
+sagemaker-user@default:~/GIT/Day_4$ git log --oneline
+47b9dc8 (HEAD -> master) third commit
+e70fad3 second commit
+dc1b826 first commit
+sagemaker-user@default:~/GIT/Day_4$ git restore --source HEAD~2 myfile.txt 
+sagemaker-user@default:~/GIT/Day_4$ git log --oneline
+47b9dc8 (HEAD -> master) third commit
+e70fad3 second commit
+dc1b826 first commit
+sagemaker-user@default:~/GIT/Day_4$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   myfile.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .ipynb_checkpoints/
+        01_undergoing_changes.txt
+        02_Git-Checkout-and-Detached-Head.txt
+        03_Git-Restore.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+sagemaker-user@default:~/GIT/Day_4$ git add code.txt mynotes.txt 
+sagemaker-user@default:~/GIT/Day_4$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   code.txt
+        new file:   mynotes.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   myfile.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .ipynb_checkpoints/
+        01_undergoing_changes.txt
+        02_Git-Checkout-and-Detached-Head.txt
+        03_Git-Restore.txt
+
+sagemaker-user@default:~/GIT/Day_4$ git restore --staged mynotes.txt 
+sagemaker-user@default:~/GIT/Day_4$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   code.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   myfile.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .ipynb_checkpoints/
+        01_undergoing_changes.txt
+        02_Git-Checkout-and-Detached-Head.txt
+        03_Git-Restore.txt
+        mynotes.txt
+
+sagemaker-user@default:~/GIT/Day_4$ 

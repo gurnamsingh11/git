@@ -1,0 +1,84 @@
+Git reset allows us to remove commits and "reset" the branch.
+
+Two main types of git reset calls"
+
+git reset #######
+Removes commits in front of the specific hash called, files unchanged.
+
+git reset ####### --hard
+Removes commits and the changes in the files.
+
+When you do git reset you wont notice a change in the files themselves, you just reset the commits.
+
+This is useful if you accidentally committed to the wrong branch ( for example, maybe you forgot to run git switch right after creating a new branch, accidentally committing to the original branch).
+
+IF you want the files to change you add the flag --hard
+
+For example:
+
+git reset f3h4782 --hard
+
+sagemaker-user@default:~/GIT/Day_4$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint:   git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/sagemaker-user/GIT/Day_4/.git/
+sagemaker-user@default:~/GIT/Day_4$ git add myfile.txt 
+sagemaker-user@default:~/GIT/Day_4$ git commit -m "one commit"
+[master (root-commit) 12d3fc3] one commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 myfile.txt
+sagemaker-user@default:~/GIT/Day_4$ git add myfile.txt 
+sagemaker-user@default:~/GIT/Day_4$ git commit -m "two commit"
+[master 0005c62] two commit
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+sagemaker-user@default:~/GIT/Day_4$ git add myfile.txt 
+sagemaker-user@default:~/GIT/Day_4$ git commit -m "three commit"
+[master bd1e13a] three commit
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+sagemaker-user@default:~/GIT/Day_4$ git log
+commit bd1e13a635e1ba06ec47417bc41db4dc976fef6f (HEAD -> master)
+Author: Gurnam <lohiagurunam11@gmail.com>
+Date:   Sat Sep 14 11:02:53 2024 +0000
+
+    three commit
+
+commit 0005c626be668203ec6374a798443fc680cd2ce4
+Author: Gurnam <lohiagurunam11@gmail.com>
+Date:   Sat Sep 14 11:02:31 2024 +0000
+
+    two commit
+
+commit 12d3fc3ea3b8df67847d06ff7209994b4daf4770
+Author: Gurnam <lohiagurunam11@gmail.com>
+Date:   Sat Sep 14 11:02:02 2024 +0000
+
+    one commit
+sagemaker-user@default:~/GIT/Day_4$ git log --oneline
+bd1e13a (HEAD -> master) three commit
+0005c62 two commit
+12d3fc3 one commit
+sagemaker-user@default:~/GIT/Day_4$ git reset 0005c62
+Unstaged changes after reset:
+M       myfile.txt
+sagemaker-user@default:~/GIT/Day_4$ git log --oneline
+0005c62 (HEAD -> master) two commit
+12d3fc3 one commit
+sagemaker-user@default:~/GIT/Day_4$ git add myfile.txt 
+sagemaker-user@default:~/GIT/Day_4$ git commit -m "updated commit"
+[master abc948a] updated commit
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+sagemaker-user@default:~/GIT/Day_4$ git log --oneline
+abc948a (HEAD -> master) updated commit
+0005c62 two commit
+12d3fc3 one commit
+sagemaker-user@default:~/GIT/Day_4$ git reset 0005c62 --hard
+HEAD is now at 0005c62 two commit
+sagemaker-user@default:~/GIT/Day_4$ 

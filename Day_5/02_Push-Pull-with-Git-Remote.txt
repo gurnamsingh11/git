@@ -1,0 +1,28 @@
+git remote will list the remote connections you have
+
+git remote -v will list the remote connections along with their URL.
+
+Add or remove remote repositeries:
+git remote add <name> <url>
+git remote rm <name>
+
+Hiding files:
+
+creating a file called .gitignore at the root of Git repository then we can define patterns:
+
+Mypasswords.txt
+- Ignores this specific file
+
+directory_name/
+- Ignores everything in this directory
+
+*.sql
+- Ignores anything ending with .sql
+
+VS Code:
+
+Accounts > Turn on settings > Sign in > github
+
+source control > here we can directly commit
+
+three dots -> add remote -> add repo link with token

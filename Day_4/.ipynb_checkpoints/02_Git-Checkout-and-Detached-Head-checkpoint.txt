@@ -1,0 +1,92 @@
+sagemaker-user@default:~/GIT/Day_4$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint:   git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/sagemaker-user/GIT/Day_4/.git/
+sagemaker-user@default:~/GIT/Day_4$ git add myfile.txt 
+sagemaker-user@default:~/GIT/Day_4$ git commiy -m "first commiyt"
+git: 'commiy' is not a git command. See 'git --help'.
+
+The most similar command is
+        commit
+sagemaker-user@default:~/GIT/Day_4$ git commit -m "first commit"
+[master (root-commit) dc1b826] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 myfile.txt
+sagemaker-user@default:~/GIT/Day_4$ git add myfile.txt 
+sagemaker-user@default:~/GIT/Day_4$ git commit -m "second commit"
+[master e70fad3] second commit
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+sagemaker-user@default:~/GIT/Day_4$ git add myfile.txt 
+sagemaker-user@default:~/GIT/Day_4$ git commit -m "third commit"
+[master 47b9dc8] third commit
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+sagemaker-user@default:~/GIT/Day_4$ git log
+commit 47b9dc8cef74fd634e0f9596163c0f38c29a31c3 (HEAD -> master)
+Author: Gurnam <lohiagurunam11@gmail.com>
+Date:   Fri Sep 13 19:34:10 2024 +0000
+
+    third commit
+
+commit e70fad38f18d05a332e08f4b09ab9644eeaa0153
+Author: Gurnam <lohiagurunam11@gmail.com>
+Date:   Fri Sep 13 19:33:48 2024 +0000
+
+    second commit
+
+commit dc1b826d07671f787dc1da8292b8aa9fd3d20515
+Author: Gurnam <lohiagurunam11@gmail.com>
+Date:   Fri Sep 13 19:33:15 2024 +0000
+
+    first commit
+sagemaker-user@default:~/GIT/Day_4$ git log --oneline
+47b9dc8 (HEAD -> master) third commit
+e70fad3 second commit
+dc1b826 first commit
+sagemaker-user@default:~/GIT/Day_4$ git checkout
+sagemaker-user@default:~/GIT/Day_4$ git checkout e70fad3
+Note: switching to 'e70fad3'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at e70fad3 second commit
+sagemaker-user@default:~/GIT/Day_4$ git log
+commit e70fad38f18d05a332e08f4b09ab9644eeaa0153 (HEAD)
+Author: Gurnam <lohiagurunam11@gmail.com>
+Date:   Fri Sep 13 19:33:48 2024 +0000
+
+    second commit
+
+commit dc1b826d07671f787dc1da8292b8aa9fd3d20515
+Author: Gurnam <lohiagurunam11@gmail.com>
+Date:   Fri Sep 13 19:33:15 2024 +0000
+
+    first commit
+sagemaker-user@default:~/GIT/Day_4$ git checkout master
+Previous HEAD position was e70fad3 second commit
+Switched to branch 'master'
+sagemaker-user@default:~/GIT/Day_4$ git log --oneline
+47b9dc8 (HEAD -> master) third commit
+e70fad3 second commit
+dc1b826 first commit
+sagemaker-user@default:~/GIT/Day_4$ 

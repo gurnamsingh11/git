@@ -1,0 +1,24 @@
+Windows Command Prompt:
+
+dir -> List all Directories
+
+cd <name of directory>
+
+cls to clear screen
+
+cd .. -> One Directory Back
+
+tab (key) -> Autocomplete
+
+mkdir <folder_name> -> create Directory
+
+
+MacOs or Linux:
+
+pwd -> to know the current directory
+
+ls -> list of different files and folders at current directory
+
+clear -> clear screen
+
+

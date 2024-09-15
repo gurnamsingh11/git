@@ -1,0 +1,179 @@
+#Git Branch Commands:
+Create a New Repo
+Add File
+Create a New Branch
+
+git branch <branch_name>
+
+#Report Branches
+git branch
+
+#Switch Branches
+git switch
+
+
+#####
+
+sagemaker-user@default:~/GIT/Day_3$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../Day_0/
+        ../Day_1/
+        ../Day_2/
+        ./
+        ../git-course/
+        ../private-repo/
+
+
+sagemaker-user@default:~/GIT/Day_3$ git init
+
+Initialized empty Git repository in /home/sagemaker-user/GIT/Day_3/.git/
+
+sagemaker-user@default:~/GIT/Day_3$ git log
+fatal: your current branch 'master' does not have any commits yet
+
+sagemaker-user@default:~/GIT/Day_3$ git add my_file.txt 
+
+sagemaker-user@default:~/GIT/Day_3$ git commit -m "My First commiy"
+[master (root-commit) 67df12e] My First commiy
+ 1 file changed, 3 insertions(+)
+ create mode 100644 my_file.txt
+
+sagemaker-user@default:~/GIT/Day_3$ git log
+commit 67df12e0f31ee9baf35a9e6387b2e112c6784bef (HEAD -> master)
+
+    My First commiy
+
+sagemaker-user@default:~/GIT/Day_3$ git branch
+* master
+
+sagemaker-user@default:~/GIT/Day_3$ git branch new_branch
+
+sagemaker-user@default:~/GIT/Day_3$ git branch
+* master
+  new_branch
+
+sagemaker-user@default:~/GIT/Day_3$ git add my_file.txt 
+
+sagemaker-user@default:~/GIT/Day_3$ git commit -m "Added new line"
+
+sagemaker-user@default:~/GIT/Day_3$ git log
+commit 9b3a97ba2cf2102981373accc308e315e38a279a (HEAD -> master)
+
+    Added new line
+
+commit 67df12e0f31ee9baf35a9e6387b2e112c6784bef (new_branch)
+
+    My First commiy
+
+sagemaker-user@default:~/GIT/Day_3$ git switch new_branch
+Switched to branch 'new_branch'
+
+sagemaker-user@default:~/GIT/Day_3$ git log
+commit 67df12e0f31ee9baf35a9e6387b2e112c6784bef (HEAD -> new_branch)
+
+    My First commiy
+
+sagemaker-user@default:~/GIT/Day_3$ git status
+On branch new_branch
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+sagemaker-user@default:~/GIT/Day_3$ git status
+On branch new_branch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   my_file.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .ipynb_checkpoints/
+        Git-Branch-Commands.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+sagemaker-user@default:~/GIT/Day_3$ git add my_file.txt 
+
+sagemaker-user@default:~/GIT/Day_3$ git commit -m "new updates for new branch"
+[new_branch f792bf8] new updates for new branch
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+sagemaker-user@default:~/GIT/Day_3$ git log
+commit f792bf8e034dd3768e7450e0c651e49ac060175f (HEAD -> new_branch)
+
+    new updates for new branch
+
+Date:   Thu Sep 12 19:14:25 2024 +0000
+
+    My First commiy
+
+sagemaker-user@default:~/GIT/Day_3$ git switch master
+Switched to branch 'master'
+
+sagemaker-user@default:~/GIT/Day_3$ git log
+commit 9b3a97ba2cf2102981373accc308e315e38a279a (HEAD -> master)
+
+    Added new line
+
+commit 67df12e0f31ee9baf35a9e6387b2e112c6784bef
+
+    My First commiy
+
+sagemaker-user@default:~/GIT/Day_3$ git switch new_branch
+Switched to branch 'new_branch'
+sagemaker-user@default:~/GIT/Day_3$ git branch
+  master
+* new_branch
+
+sagemaker-user@default:~/GIT/Day_3$ git branch experimenal
+
+sagemaker-user@default:~/GIT/Day_3$ git switch experimenal
+Switched to branch 'experimenal'
+
+sagemaker-user@default:~/GIT/Day_3$ git status
+On branch experimenal
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   my_file.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .ipynb_checkpoints/
+        Git-Branch-Commands.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+sagemaker-user@default:~/GIT/Day_3$ git add my_file.txt 
+
+sagemaker-user@default:~/GIT/Day_3$ git commit -m "Experimental updates"
+[experimenal 1dd002e] Experimental updates
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+sagemaker-user@default:~/GIT/Day_3$ git log
+commit 1dd002e309c44491747b084959eb98839c3643fb (HEAD -> experimenal)
+
+    Experimental updates
+
+commit f792bf8e034dd3768e7450e0c651e49ac060175f (new_branch)
+
+    new updates for new branch
+
+commit 67df12e0f31ee9baf35a9e6387b2e112c6784bef
+
+    My First commiy
+sagemaker-user@default:~/GIT/Day_3$ git status
+On branch experimenal
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .ipynb_checkpoints/
+        Git-Branch-Commands.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+sagemaker-user@default:~/GIT/Day_3$ git switch new_branch
+Switched to branch 'new_branch'

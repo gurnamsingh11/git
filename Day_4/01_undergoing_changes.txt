@@ -1,0 +1,24 @@
+git checkout and Detached Head
+git restore
+git reset
+git revert
+
+git checkout
+A "checkout" is the act of switching between different versions of a target entity.
+
+The git checkout command can operate on three distinct entities: files, commits, and branches.
+
+For example, you could use git checkout branch_name instead of git switch branch_name to checkout a new branch.
+
+Unlike git switch however, recall checkout can operate on commits, meaning we can "checkout" historical commits.
+
+we can check out a particular commit by specifying its hash, we can get hashes from the git log command and we can also see the abbreviated hash using:
+git log --online
+
+Then we can provide the has as:
+git checkout ####### (first seven)
+
+This command does not UNDO previous work, simply exploring historical commits
+
+
+

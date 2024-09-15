@@ -1,0 +1,185 @@
+sagemaker-user@default:~/GIT/Day_3$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint:   git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/sagemaker-user/GIT/Day_3/.git/
+sagemaker-user@default:~/GIT/Day_3$ git log
+fatal: your current branch 'master' does not have any commits yet
+sagemaker-user@default:~/GIT/Day_3$ git add my_file.txt 
+sagemaker-user@default:~/GIT/Day_3$ git commit -m "added myfile"
+[master (root-commit) bc4a6a4] added myfile
+ 1 file changed, 1 insertion(+)
+ create mode 100644 my_file.txt
+sagemaker-user@default:~/GIT/Day_3$ git branch
+* master
+sagemaker-user@default:~/GIT/Day_3$ git log
+commit bc4a6a4abaf2ad145ad5fa653cf80710a950dd71 (HEAD -> master)
+Author: Gurnam <lohiagurunam11@gmail.com>
+Date:   Fri Sep 13 18:02:12 2024 +0000
+
+    added myfile
+sagemaker-user@default:~/GIT/Day_3$ git branch new_branch
+sagemaker-user@default:~/GIT/Day_3$ git branch
+* master
+  new_branch
+sagemaker-user@default:~/GIT/Day_3$ git switch new_branch
+Switched to branch 'new_branch'
+sagemaker-user@default:~/GIT/Day_3$ git status
+On branch new_branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .ipynb_checkpoints/
+        01_Git-Branch-Commands.txt
+        02_Delete-Rename-Branches.txt
+        03_Merging-Branches.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+sagemaker-user@default:~/GIT/Day_3$ git add my_file.txt 
+
+sagemaker-user@default:~/GIT/Day_3$ git commit -m "added new branch line"
+[new_branch 1768d7c] added new branch line
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+sagemaker-user@default:~/GIT/Day_3$ git add my_file.txt 
+sagemaker-user@default:~/GIT/Day_3$ git commit -m "yet another line"
+[new_branch f2eb752] yet another line
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+sagemaker-user@default:~/GIT/Day_3$ git log
+commit f2eb7520cf79e147d0f645583f1bca0680fd9052 (HEAD -> new_branch)
+Author: Gurnam <lohiagurunam11@gmail.com>
+Date:   Fri Sep 13 18:05:05 2024 +0000
+
+    yet another line
+
+commit 1768d7ce704fc6b33ac9510b78caf413ddd00334
+Author: Gurnam <lohiagurunam11@gmail.com>
+Date:   Fri Sep 13 18:04:25 2024 +0000
+
+    added new branch line
+
+commit bc4a6a4abaf2ad145ad5fa653cf80710a950dd71 (master)
+Author: Gurnam <lohiagurunam11@gmail.com>
+Date:   Fri Sep 13 18:02:12 2024 +0000
+
+    added myfile
+sagemaker-user@default:~/GIT/Day_3$ git switch master
+Switched to branch 'master'
+sagemaker-user@default:~/GIT/Day_3$ git switch new_branch
+Switched to branch 'new_branch'
+sagemaker-user@default:~/GIT/Day_3$ git switch master
+Switched to branch 'master'
+sagemaker-user@default:~/GIT/Day_3$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .ipynb_checkpoints/
+        01_Git-Branch-Commands.txt
+        02_Delete-Rename-Branches.txt
+        03_Merging-Branches.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+sagemaker-user@default:~/GIT/Day_3$ git merge new_branch
+Updating bc4a6a4..f2eb752
+Fast-forward
+ my_file.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+sagemaker-user@default:~/GIT/Day_3$ git branch
+* master
+  new_branch
+sagemaker-user@default:~/GIT/Day_3$ git branch experimental
+sagemaker-user@default:~/GIT/Day_3$ git switch experimental
+Switched to branch 'experimental'
+sagemaker-user@default:~/GIT/Day_3$ git branch
+* experimental
+  master
+  new_branch
+sagemaker-user@default:~/GIT/Day_3$ git add experimental.txt 
+sagemaker-user@default:~/GIT/Day_3$ git commit -m "added experimental.txt"
+[experimental 13de7ea] added experimental.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 experimental.txt
+sagemaker-user@default:~/GIT/Day_3$ git switch master
+Switched to branch 'master'
+sagemaker-user@default:~/GIT/Day_3$ git add m
+master.txt   my_file.txt  
+sagemaker-user@default:~/GIT/Day_3$ git add master.txt 
+sagemaker-user@default:~/GIT/Day_3$ git commit -m "added master.txt"
+[master 69b51bf] added master.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 master.txt
+sagemaker-user@default:~/GIT/Day_3$ git switch experimental
+Switched to branch 'experimental'
+sagemaker-user@default:~/GIT/Day_3$ git status
+On branch experimental
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .ipynb_checkpoints/
+        01_Git-Branch-Commands.txt
+        02_Delete-Rename-Branches.txt
+        03_Merging-Branches.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+sagemaker-user@default:~/GIT/Day_3$ git switch master
+Switched to branch 'master'
+sagemaker-user@default:~/GIT/Day_3$ git merge experimental
+Merge made by the 'ort' strategy.
+ experimental.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 experimental.txt
+sagemaker-user@default:~/GIT/Day_3$ git branch bug_qa
+sagemaker-user@default:~/GIT/Day_3$ git branch
+  bug_qa
+  experimental
+* master
+  new_branch
+sagemaker-user@default:~/GIT/Day_3$ git add my_file.txt 
+sagemaker-user@default:~/GIT/Day_3$ git commit -m "added line 4 master"
+[master ffaedec] added line 4 master
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+sagemaker-user@default:~/GIT/Day_3$ git switch bug_qa
+Switched to branch 'bug_qa'
+sagemaker-user@default:~/GIT/Day_3$ git status
+On branch bug_qa
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   my_file.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .ipynb_checkpoints/
+        01_Git-Branch-Commands.txt
+        02_Delete-Rename-Branches.txt
+        03_Merging-Branches.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+sagemaker-user@default:~/GIT/Day_3$ git add my_file.txt 
+sagemaker-user@default:~/GIT/Day_3$ git commit -m "qa bug test code on line four"
+[bug_qa f7df06f] qa bug test code on line four
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+sagemaker-user@default:~/GIT/Day_3$ git switch master
+Switched to branch 'master'
+sagemaker-user@default:~/GIT/Day_3$ git merge bug_qa
+Auto-merging my_file.txt
+CONFLICT (content): Merge conflict in my_file.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+sagemaker-user@default:~/GIT/Day_3$ git add my_file.txt 
+sagemaker-user@default:~/GIT/Day_3$ git commit -m "fixed conflicts"
+[master 49b0575] fixed conflicts
+sagemaker-user@default:~/GIT/Day_3$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .ipynb_checkpoints/
+        01_Git-Branch-Commands.txt
+        02_Delete-Rename-Branches.txt
+        03_Merging-Branches.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
