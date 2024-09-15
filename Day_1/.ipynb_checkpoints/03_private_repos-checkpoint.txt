@@ -13,6 +13,3 @@ Clone Syntax with PAT:
 
 git clone https://token@github.com/account/repo.git
 
-
-Via Github Desktop:
-
